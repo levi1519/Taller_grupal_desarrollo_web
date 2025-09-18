@@ -1,0 +1,304 @@
+/* Reset básico de márgenes y padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Utilidad para elementos ocultos visualmente pero accesibles para lectores de pantalla */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Variables CSS - Colores universitarios profesionales */
+:root {
+    --primary-blue: #1e3a8a;       /* Azul universitario principal */
+    --secondary-blue: #3b82f6;     /* Azul secundario */
+    --light-blue: #60a5fa;         /* Azul claro */
+    --dark-gray: #374151;          /* Gris oscuro */
+    --medium-gray: #6b7280;        /* Gris medio */
+    --light-gray: #f3f4f6;         /* Gris claro */
+    --white: #ffffff;              /* Blanco */
+    --success-color: #10b981;      /* Verde éxito */
+    --error-color: #ef4444;        /* Rojo error */
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* Estilos para el body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 50%, var(--light-blue) 100%);
+    min-height: 100vh;
+    color: var(--dark-gray);
+    line-height: 1.6;
+}
+
+/* Uso de flexbox para centrar el formulario en la página */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor del formulario con sombra y bordes redondeados */
+.form-wrapper {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px var(--shadow-color), 0 4px 8px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 450px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* Header del formulario */
+.form-header {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Título principal */
+h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Subtítulo */
+.subtitle {
+    color: var(--medium-gray);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* Formulario */
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Fieldset sin bordes */
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Grupos de campos con espaciado apropiado */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Etiquetas estilizadas */
+label {
+    font-weight: 600;
+    color: var(--dark-gray);
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+/* Campos de entrada estilizados */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 14px 16px;
+    border: 2px solid var(--light-gray);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: inherit;
+    background: var(--white);
+    color: var(--dark-gray);
+    transition: all 0.3s ease;
+}
+
+/* Placeholder styling */
+input[type="text"]::placeholder,
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    color: var(--medium-gray);
+    opacity: 0.8;
+}
+
+/* Estados de enfoque para campos */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: var(--secondary-blue);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+/* Estados de validación */
+.form-group.valid input {
+    border-color: var(--success-color);
+    background-color: rgba(16, 185, 129, 0.02);
+}
+
+.form-group.invalid input {
+    border-color: var(--error-color);
+    background-color: rgba(239, 68, 68, 0.02);
+}
+
+/* Mensajes de error */
+.error-message {
+    color: var(--error-color);
+    font-size: 0.85rem;
+    font-weight: 500;
+    min-height: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-top: 4px;
+}
+
+.error-message.show {
+    opacity: 1;
+}
+
+/* Botón con hover effects */
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+    color: var(--white);
+    padding: 16px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+/* Hover effects para el botón */
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.4);
+    background: linear-gradient(135deg, var(--secondary-blue), var(--light-blue));
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.submit-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3), 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+    }
+    
+    .form-wrapper {
+        padding: 32px 24px;
+        margin: 12px;
+        border-radius: 10px;
+    }
+    
+    h2 {
+        font-size: 1.75rem;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+    
+    .submit-btn {
+        padding: 14px 20px;
+        font-size: 1rem;
+    }
+    
+    .form-group {
+        gap: 6px;
+    }
+    
+    .registration-form {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-wrapper {
+        padding: 28px 20px;
+        margin: 8px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.88rem;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+    
+    .submit-btn {
+        padding: 12px 18px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Animación de entrada suave */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-wrapper {
+    animation: slideInUp 0.6s ease-out;
+}
+
+/* Estados adicionales para accesibilidad */
+input:disabled {
+    background-color: var(--light-gray);
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Mejoras de contraste para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
