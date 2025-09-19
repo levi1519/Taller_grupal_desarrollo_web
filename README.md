@@ -190,7 +190,7 @@ php -S localhost:8000
 
 ## 👨‍💻 Autor
 
-**Claude (Asistente de IA)**  
+ 
 Desarrollado para práctica universitaria  
 **Universidad Estatal de Milagro (UNEMI)**  
 **Carrera**: Ingeniería en Sistemas  
